@@ -8,4 +8,4 @@ const schema = new Schema({
    createdAt:String,
 });
 
-module.exports= model("newsletter", schema);
+module.exports= model("newsForm", schema);
