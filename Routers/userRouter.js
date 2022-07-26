@@ -13,7 +13,7 @@ router.post("/news",(req,res)=>{
     .then((result) => {
         console.log("data saved");
         res.json(result);
-    }).catch((err) => {
+    }).catch((err) => {       
         console.error("error");
         res.json(err);
     });
