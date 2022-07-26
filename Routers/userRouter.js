@@ -36,7 +36,7 @@ router.post("/authenticate", (req, res) => {
   const formdata = req.body;
 //to find the first entry
   Model.findOne({
-    username: formdata.username,
+    // username: formdata.username,
     email: formdata.email,
     password: formdata.password,
   })
