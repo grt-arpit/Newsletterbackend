@@ -12,7 +12,7 @@ const cors=require("cors");
 
 app.use(express.json());
 
-app.use(cors({origin:["http://localhost:3000"]}));
+app.use(cors({origin:["http://localhost:3000", "http://localhost:5500"]}));
 
 app.use("/user",userRouter);
 

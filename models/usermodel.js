@@ -5,7 +5,7 @@ const schema = new Schema({
     email: String,
     password: String,
     websiteName: String,
-    createdAt:String,
+    createdAt:Date,
 });
 
 module.exports= model("users", schema);
