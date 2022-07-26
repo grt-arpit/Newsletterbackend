@@ -13,7 +13,7 @@ router.post("/news",(req,res)=>{
     .then((result) => {
         console.log("data saved");
         res.json(result);
-    }).catch((err) => {
+    }).catch((err) => {       
         console.error("error");
         res.json(err);
     });
@@ -32,6 +32,27 @@ router.get("/getall", (req, res) => {
     });
 });
 
-
+router.post("/authenticate", (req, res) => {
+  const formdata = req.body;
+//to find the first entry
+  Model.findOne({
+    username: formdata.username,
+    email: formdata.email,
+    password: formdata.password,
+  })
+    .then((userdata) => {
+      if (userdata) {
+        console.log("login success");
+        res.status(200).json(userdata);
+      } else {
+        console.log("login faild");
+        res.status(300).json({ loginstatus: false });
+      }
+    })
+    .catch((err) => {
+      console.error("error");
+      res.json(err);
+    });
+});
 
 module.exports= router;

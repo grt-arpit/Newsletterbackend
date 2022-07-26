@@ -42,6 +42,16 @@ router.get("/getbyownerid/:ownerid", (req, res) => {
         res.json(err);
       });
   });
-
+  router.delete("/delete/:id", (req, res) => {
+    Model.findByIdAndDelete(req.params.id)
+      .then((result) => {
+        console.log(result);
+        res.json(result);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.json(err);
+      });
+  });
 
 module.exports=router;
