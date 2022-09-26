@@ -12,7 +12,7 @@ const cors=require("cors");
 
 app.use(express.json());
 
-app.use(cors({origin:["http://localhost:3000", "http://localhost:5500"]}));
+app.use(cors({origin:["http://localhost:3000", "http://127.0.0.1:5500"]}));
 
 app.use("/user",userRouter);
 
@@ -22,6 +22,7 @@ app.use("/newsletter",newsletterRouter);
 
 app.use("/utils",utils);
 
+app.use(express.static('./static/resources'));
 
 
 app.get("/first", (req, res) => {

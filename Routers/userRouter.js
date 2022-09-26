@@ -50,7 +50,7 @@ router.post( '/authenticate', (req, res) => {
     console.error(err);
     res.json(err);
   });
-})
+});
 
 
 
